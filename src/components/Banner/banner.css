@@ -1,0 +1,13 @@
+.banner-image {
+  background: url("E:\comeon\mern-group-page\src\images\banner.png") no-repeat
+    center center;
+  background-size: cover;
+  height: 400px;
+  position: relative;
+}
+
+.carousel-caption h1,
+.carousel-caption p {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
