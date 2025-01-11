@@ -1,13 +1,53 @@
+/* Banner Background */
 .banner-image {
-  background: url("../../images/banner.png") no-repeat
-    center center;
+  background: url("../../images/banner.png") no-repeat center center;
   background-size: cover;
   height: 400px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.carousel-caption h1,
-.carousel-caption p {
+/* Dark Overlay */
+.banner-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55); /* Semi-transparent black overlay */
+  z-index: 1; /* Ensures the overlay is above the background */
+}
+
+/* Banner Content */
+.carousel-caption {
+  position: relative;
+  z-index: 2; /* Ensures content appears above the overlay */
   color: white;
+  text-align: start;
+}
+
+.carousel-caption h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  opacity: 0.85; /* Slight transparency for paragraph text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Top Bar Button Styling */
+.btn {
+  position: relative;
+  z-index: 2; /* Ensures buttons are above the overlay */
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
 }
