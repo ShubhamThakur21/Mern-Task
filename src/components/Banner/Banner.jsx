@@ -1,16 +1,23 @@
 import "./banner.css";
-const Banner = (isLoggedIn) => {
+
+const Banner = ({ isLoggedIn }) => {
+  // Use destructuring for props
   return (
     <div className="position-relative mb-6 banner-image">
+      {/* Dark Overlay */}
+      <div className="banner-overlay"></div>
+
+      {/* Top bar with "Sign In" or "Join Group" */}
       <div className="container d-flex justify-content-between align-items-center pt-3">
         <div className="d-flex align-items-center d-sm-block d-md-none">
-          <i className="bi bi-arrow-left text-white fs-4 me-3"></i>{" "}
+          <i className="bi bi-arrow-left text-white fs-4 me-3"></i>
         </div>
-        <button className="btn btn-outline-light btn-sm d-sm-block d-md-none ">
+        <button className="btn btn-outline-light btn-sm d-sm-block d-md-none">
           {isLoggedIn ? "Join Group" : "Sign In"}
         </button>
       </div>
 
+      {/* Banner content */}
       <div className="container h-100 d-flex align-items-end pb-3">
         <div className="carousel-caption text-start text-white">
           <h1>Computer Engineering</h1>
